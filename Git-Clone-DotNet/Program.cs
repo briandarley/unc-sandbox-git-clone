@@ -181,6 +181,12 @@ public class Program
     {
         try
         {
+            string username, password;
+            Console.WriteLine("Enter GIT Username");
+            username = Console.ReadLine();
+            Console.WriteLine("Enter GIT Password");
+            password = Console.ReadLine();
+
             var response = await client.GetAsync("https://sc.its.unc.edu");
             var webData = await response.Content.ReadAsStringAsync();
 
@@ -193,8 +199,8 @@ public class Program
             var pairs = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("utf8", "✓"),
-                new KeyValuePair<string, string>("username", "bdarley"),
-                new KeyValuePair<string, string>("password", "t@ssN0va"),
+                new KeyValuePair<string, string>("username", username),
+                new KeyValuePair<string, string>("password", password),
                 new KeyValuePair<string, string>("authenticity_token", fieldValue)
             };
 
